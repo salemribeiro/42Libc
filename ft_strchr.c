@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/24 19:33:59 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/01/27 18:52:30 by sfreitas         ###   ########.fr       */
+/*   Created: 2020/01/27 19:27:47 by sfreitas          #+#    #+#             */
+/*   Updated: 2020/01/27 19:31:20 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-size_t		ft_strlen(const char *source)
+char		*ft_strchr(const char *source, int caracter)
 {
 	int i;
-	
-	i = 0;
-	while (source[i] != '\0')
-		i++;
-	return(i);
-}
 
+	i = 0;
+	while(source[i] != '\0')
+	{
+		return(source[i])
+	}
+	return (NULL);
+}
 

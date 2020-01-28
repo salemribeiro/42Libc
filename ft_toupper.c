@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/24 19:33:59 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/01/27 18:52:30 by sfreitas         ###   ########.fr       */
+/*   Created: 2020/01/27 18:59:29 by sfreitas          #+#    #+#             */
+/*   Updated: 2020/01/27 19:00:16 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-size_t		ft_strlen(const char *source)
+
+int		ft_toupper(int caracter)
 {
-	int i;
-	
-	i = 0;
-	while (source[i] != '\0')
-		i++;
-	return(i);
+	if(caracter >= 65 && caracter <= 90)
+		return(1);
+	return(0);
 }
-
-
