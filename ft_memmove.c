@@ -11,31 +11,32 @@
 /* ************************************************************************** */
 #include<stdio.h>
 
-void		*ft_memmove(void *dst, void *src, size_t len)
-{
-	size_t i;
-	char *destination;
-	char *source;
-	i = 0;
-	destination = (char)dst;
-	source = (char)src;
-	if(len > 0)
-	{
-		while(destination[i] != '\0' && i < len)
-		{
-			printf("%c", destination[i]);
-			destination[i] = source[i];
-			if(source[i] == '\0')
-				return (destination);
-			i++;
-		}
-	}
-	else
-	{
-		return (NULL);
-	}
-	return (destination);
-}
+void        *ft_memmove(void *dst, void *src, size_t len)
+3	{
+4	    size_t i;
+5	    char *destination;
+6	    char *source;
+7	    i = 0;
+8	    destination = (char*)dst;
+9	    source = (char*)src;
+10	    if(len > 0)
+11	    {
+12	        while(destination[i] != '\0' && i < len)
+13	        {
+14	            printf("%c", destination[i]);
+15	            destination[i] = source[i];
+16	            if(source[i] == '\0')
+17	                return (destination);
+18	            i++;
+19	        }
+20	    }
+21	    else
+22	    {
+23	        return (NULL);
+24	    }
+25	    return (destination);
+26	}
+
 
 int main(void)
 {
