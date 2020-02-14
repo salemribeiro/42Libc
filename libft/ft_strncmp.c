@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/20 15:35:21 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/02/14 20:34:28 by sfreitas         ###   ########.fr       */
+/*   Created: 2020/02/14 20:10:44 by sfreitas          #+#    #+#             */
+/*   Updated: 2020/02/14 20:31:58 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	int i;
+	int retorno;
 
-#endif
+	i = 0;
+	while (s1[i] != '\0' && s2[i] != '\0' && i < n)
+	{
+		if (s1[i] > s2[i])
+			return (1);
+		else if (s1[i] < s2[i])
+			return (-1);
+		i++;
+	}
+	return (0);
+}

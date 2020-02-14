@@ -1,19 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/20 15:35:21 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/02/14 20:34:28 by sfreitas         ###   ########.fr       */
+/*   Created: 2019/12/12 19:52:59 by sfreitas          #+#    #+#             */
+/*   Updated: 2019/12/12 20:41:07 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stdio.h>
 
-# include <stdlib.h>
-# include <unistd.h>
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+{
+	unsigned int j;
+	unsigned int i;
 
-#endif
+	i = 0;
+	j = 0;
+	while (dest[j] != '\0')
+		j++;
+	while (1 + j + i < size && src[i] != '\0')
+	{
+		dest[j + i] = src[i];
+		i++;
+	}
+	dest[j + i] = '\0';
+	while (src[i] != '\0')
+		i++;
+	if (size < j)
+		return (size + i);
+	return (j + i);
+}

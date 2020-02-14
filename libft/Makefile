@@ -3,27 +3,39 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ebresser <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: rcamilo- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/02/04 12:56:04 by ebresser          #+#    #+#              #
-#    Updated: 2020/02/06 08:58:49 by ebresser         ###   ########.fr        #
+#    Created: 2020/01/23 19:27:53 by rcamilo-          #+#    #+#              #
+#    Updated: 2020/02/14 17:39:24 by rcamilo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-SRC = *.c
-OBJ = *.o 
-all : $(NAME)
+SRCS = *.c
+OBJS = *.o
+CPARAMS = -c
+CFLAGS = -Wall -Werror -Wextra
+CC = gcc
+AR = ar
+ARPARAMS = -rc
+
+all: $(NAME)
+
 $(NAME):
-	@gcc -Wall -Wextra -Werror -c $(SRC) -I $(HEAD) && ar rc $(NAME) $(OBJ)
-	@echo "Finalizado libft.a"
+	$(CC) $(CPARAMS) $(CFLAGS) $(SRCS)
+	$(AR) $(ARPARAMS) $(NAME) $(OBJS)
+
+bonus:	$(NAME)
+
+noflags:
+	$(CC) $(CPARAMS) $(SRCS)
+	$(AR) $(ARPARAMS) $(NAME) $(OBJS)
+
 clean:
-	@/bin/rm -f $(OBJ)
-	@echo "Finalizado rm -f *.o"
+	rm -f $(OBJS)
+
 fclean: clean
-	@/bin/rm -f $(NAME)
-	@echo "Finalizado rm -f *.o libft.a" 
+	rm -f $(NAME)
+
 re: fclean all
 
-norm:
-	@norminette -R CheckForbiddenSourceHeader $(SRC)
