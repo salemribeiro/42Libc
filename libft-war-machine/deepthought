@@ -1,9 +1,9 @@
 = Host-specific information ====================================================
 $> hostname; uname -msr
-c1r10p2.42sp.org.br
+c1r9p1.42sp.org.br
 Darwin 18.6.0 x86_64
 $> date
-Seg 10 Fev 2020 18:04:32 -03
+Sex 14 Fev 2020 20:43:33 -03
 $> gcc --version
 Apple LLVM version 10.0.1 (clang-1001.0.46.4)
 Target: x86_64-apple-darwin18.6.0
@@ -19,7 +19,47 @@ InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault
 $> norminette libft.h | grep -E '(Error|Warning)'
 
 = Compiling libft ==============================================================
-Missing Makefile, can't compil library.
+$> make re
+rm -f *.o
+rm -f libft.a
+gcc -c -Wall -Werror -Wextra *.c
+ft_memchr.c:15:59: error: unused parameter 'n' [-Werror,-Wunused-parameter]
+void            *ft_memchr(const void *source, int caracter, size_t n)
+                                                                    ^
+1 error generated.
+ft_memcmp.c:35:4: error: add explicit braces to avoid dangling else [-Werror,-Wdangling-else]
+                        else
+                        ^
+1 error generated.
+ft_strchr.c:23:11: error: incompatible integer to pointer conversion returning 'const char' from a function with result type 'char *' [-Werror,-Wint-conversion]
+                        return (source[i]);
+                               ^~~~~~~~~~~
+1 error generated.
+ft_strncmp.c:18:6: error: unused variable 'retorno' [-Werror,-Wunused-variable]
+        int retorno;
+            ^
+ft_strncmp.c:21:45: error: comparison of integers of different signs: 'int' and 'size_t' (aka 'unsigned long') [-Werror,-Wsign-compare]
+        while (s1[i] != '\0' && s2[i] != '\0' && i < n)
+                                                 ~ ^ ~
+2 errors generated.
+ft_strrchr.c:22:10: error: incompatible integer to pointer conversion returning 'const char' from a function with result type 'char *' [-Werror,-Wint-conversion]
+                return (source[i]);
+                       ^~~~~~~~~~~
+ft_strrchr.c:15:40: error: unused parameter 'caracter' [-Werror,-Wunused-parameter]
+char            *strrchr(const char *source, int caracter)
+                                                 ^
+2 errors generated.
+teste.c:26:12: error: variable 'ptn' is uninitialized when used here [-Werror,-Wuninitialized]
+  inicio = ptn;
+           ^~~
+teste.c:21:12: note: initialize the variable 'ptn' to silence this warning
+  char *ptn;
+           ^
+            = NULL
+1 error generated.
+make: *** [libft.a] Error 1
+
+$> ls -la libft.a
 
 = Part1_functions ==============================================================
 
@@ -66,7 +106,10 @@ $> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_memchr.c main.c libft.a
 clang: error: no such file or directory: '/Users/sfreitas/42Libc/libft-war-machine/dirlibft/libft.a'
 
 = ft_memcmp.c ==================================================================
-Nothing turned in
+$> norminette ft_memcmp.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_memcmp.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/42Libc/libft-war-machine/dirlibft/libft.a'
 
 = ft_strlen.c ==================================================================
 $> norminette ft_strlen.c | grep -E '(Error|Warning)'
@@ -75,10 +118,16 @@ $> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strlen.c main.c libft.a
 clang: error: no such file or directory: '/Users/sfreitas/42Libc/libft-war-machine/dirlibft/libft.a'
 
 = ft_strdup.c ==================================================================
-Nothing turned in
+$> norminette ft_strdup.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strdup.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/42Libc/libft-war-machine/dirlibft/libft.a'
 
 = ft_strlcat.c =================================================================
-Nothing turned in
+$> norminette ft_strlcat.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strlcat.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/42Libc/libft-war-machine/dirlibft/libft.a'
 
 = ft_strlcpy.c =================================================================
 $> norminette ft_strlcpy.c | grep -E '(Error|Warning)'
@@ -99,13 +148,22 @@ $> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strrchr.c main.c libft.
 clang: error: no such file or directory: '/Users/sfreitas/42Libc/libft-war-machine/dirlibft/libft.a'
 
 = ft_strnstr.c =================================================================
-Nothing turned in
+$> norminette ft_strnstr.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strnstr.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/42Libc/libft-war-machine/dirlibft/libft.a'
 
 = ft_strncmp.c =================================================================
-Nothing turned in
+$> norminette ft_strncmp.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strncmp.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/42Libc/libft-war-machine/dirlibft/libft.a'
 
 = ft_atoi.c ====================================================================
-Nothing turned in
+$> norminette ft_atoi.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_atoi.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/42Libc/libft-war-machine/dirlibft/libft.a'
 
 = ft_isalpha.c =================================================================
 $> norminette ft_isalpha.c | grep -E '(Error|Warning)'
