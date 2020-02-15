@@ -6,7 +6,7 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 19:17:11 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/02/13 21:54:13 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/02/15 19:12:34 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,13 @@ char	*ft_strnstr(const char *word, const char *text)
 	}
 	return (NULL);
 }
+
+//int main()
+//{
+//	char *ptn;
+//	ptn = ft_strnstr("salem", "eu sou amigo do salem");
+//
+//	return (0);
+//}
+
+

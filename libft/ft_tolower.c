@@ -6,7 +6,7 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 19:00:28 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/02/10 15:24:17 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/02/15 19:18:05 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_tolower(int caracter)
 {
-	if (caracter >= 97 && caracter <= 122)
-		return (1);
-	return (0);
+	if (caracter >= 65 && caracter <= 90)
+		return (caracter + 32);
+	return (caracter);
 }

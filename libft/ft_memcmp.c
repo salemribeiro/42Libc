@@ -6,7 +6,7 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 18:05:36 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/02/10 19:23:42 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/02/15 20:03:03 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,12 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 		a = (int)value1[i];
 		b = (int)value2[i];
 		if (a != b)
+		{
 			if (a > b)
 				return (1);
-			else
+			else if (a < b)
 				return (-1);
+		}
 		i++;
 	}
 	return (0);
