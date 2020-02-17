@@ -6,7 +6,7 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 10:56:34 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/02/13 19:16:20 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/02/17 18:03:15 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,15 @@ void	searchlength(const char *str, int *body)
 	body[1] = -2;
 	body[2] = -2;
 	i = 0;
+	while ((!ft_isprint(str[i]) && str[i] != '\e') || str[i] == ' ')
+		i++;
 	if (str[i] == '-')
 	{
 		body[0] = -1;
 		i++;
 	}
+	else if (str[i] == '+')
+		i++;
 	if (str[i] >= '0' && str[i] <= '9')
 		body[1] = i;
 	i++;

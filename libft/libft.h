@@ -6,7 +6,7 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 15:35:21 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/02/15 17:58:13 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/02/17 18:35:43 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-int		ft_atoi(const char *str);
+int				ft_atoi(const char *str);
 void			ft_bzero(void *source, size_t len);
 void			*ft_calloc(size_t count, size_t size);
 int				ft_isalnum(int caracter);
@@ -40,5 +40,4 @@ char			*ft_strnstr(const char *word, const char *text);
 char			*ft_strrchr(const char *source, int caracter);
 int				ft_tolower(int caracter);
 int				ft_toupper(int caracter);
-
 #endif

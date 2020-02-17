@@ -6,7 +6,7 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 19:27:47 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/02/15 17:35:31 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/02/17 18:21:03 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ char		*ft_strchr(const char *source, int caracter)
 	{
 		if (ptr[i] == caracter)
 			return (&ptr[i]);
+		i++;
 	}
-	return (NULL);
+	if (ptr[i] == caracter)
+		return (&ptr[i]);
+	return (0);
 }
