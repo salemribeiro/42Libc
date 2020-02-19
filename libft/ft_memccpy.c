@@ -6,13 +6,13 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 11:21:40 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/02/17 11:22:07 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/02/18 18:53:08 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void		*ft_memccpy(void *dest, const void *source, size_t len)
+#include <stdio.h>
+void		*ft_memccpy(void *dest, const void *source, int c, size_t len)
 {
 	size_t			i;
 	unsigned char	*d;
@@ -21,7 +21,7 @@ void		*ft_memccpy(void *dest, const void *source, size_t len)
 	i = 0;
 	d = (unsigned char *)source;
 	s = (unsigned char *)dest;
-	while (i < len)
+	while (i < len && d[i] != ((unsigned char)c))
 	{
 		if (d[i] != '\0')
 			s[i] = d[i];
@@ -29,5 +29,13 @@ void		*ft_memccpy(void *dest, const void *source, size_t len)
 			break ;
 		i++;
 	}
-	return (dest);
+	return (s);
+}
+
+int			main()
+{
+	char *ptr;
+	ptr = (char*)memccpy("salem", "ola mundo salem cabecudo", 30);
+	printf("%s",ptr);
+
 }

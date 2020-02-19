@@ -6,7 +6,7 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 15:35:21 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/02/17 18:35:43 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/02/18 12:09:14 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ int				ft_isalpha(int caracter);
 int				ft_isascii(int caracter);
 int				ft_isdigit(int caracter);
 int				ft_isprint(int caracter);
-void			*ft_memccpy(void *dest, const void *source, size_t len);
+void			*ft_memccpy(void *dest, const void *source, int c, size_t len);
 void			*ft_memchr(const void *source, int caracter, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
-void			*ft_memccpy(void *dest, const void *source, size_t len);
+void			*ft_memcpy(void *dest, const void *source, size_t len);
 void			*ft_memmove(void *dst, void *src, size_t len);
 void			*ft_memset(void *source, int caracter, size_t len);
 char			*ft_strchr(const char *source, int caracter);
@@ -36,7 +36,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
 size_t			ft_strlcpy(char *dest, char *src, size_t size);
 size_t			ft_strlen(const char *source);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
-char			*ft_strnstr(const char *word, const char *text);
+char			*ft_strnstr(const char *text, const char *word, int value);
 char			*ft_strrchr(const char *source, int caracter);
 int				ft_tolower(int caracter);
 int				ft_toupper(int caracter);

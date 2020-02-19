@@ -6,13 +6,13 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 19:17:11 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/02/17 18:37:38 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/02/18 12:14:05 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *word, const char *text)
+char	*ft_strnstr(const char *text, const char *word, int value)
 {
 	int		i;
 	int		j;
@@ -23,7 +23,9 @@ char	*ft_strnstr(const char *word, const char *text)
 	j = 0;
 	valid = 0;
 	ptn = (char*)text;
-	while (ptn[i] != '\0')
+	if (word[i] == '\0')
+		return (&ptn[i]);
+	while (ptn[i] != '\0' && i < value)
 	{
 		while (ptn[i + j] == word[j] && word[j] != '\0')
 		{
