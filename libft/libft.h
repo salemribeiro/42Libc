@@ -6,7 +6,7 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 15:35:21 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/02/20 14:26:22 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/02/20 17:52:01 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,6 @@ char			*ft_strnstr(const char *text, const char *word, int value);
 char			*ft_strrchr(const char *source, int caracter);
 int				ft_tolower(int caracter);
 int				ft_toupper(int caracter);
+char			*ft_substr(char const *s, unsigned int start, size_t len);
+char			*ft_strjoin(char const *s1, char const *s2);
 #endif
