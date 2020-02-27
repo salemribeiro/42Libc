@@ -41,12 +41,10 @@ void	searchlength(const char *str, int *body)
 
 int		ft_atoi(const char *str)
 {
-	int i;
 	int body[3];
 	int result;
 
 	searchlength(str, body);
-	i = 0;
 	result = 0;
 	if (body[0] != -2 && body[1] != -2 && body[2] != -2)
 	{
