@@ -6,11 +6,11 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/12 19:52:59 by sfreitas          #+#    #+#             */
-/*   Updated: 2019/12/12 20:41:07 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/02/27 15:30:58 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {

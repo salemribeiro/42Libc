@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_ft.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/27 10:54:14 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/02/27 10:54:24 by sfreitas         ###   ########.fr       */
+/*   Created: 2020/02/27 11:15:20 by sfreitas          #+#    #+#             */
+/*   Updated: 2020/02/27 11:16:29 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int size;
+	int		size;
+	char	*ptr;
 
-	size = ft_strlen(s);
-	write(fd, s, size);
+	ptr = ft_itoa(n);
+	size = ft_strlen(ptr);
+	write(fd, ptr, size);
 }

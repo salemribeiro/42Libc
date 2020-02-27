@@ -6,12 +6,11 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 10:56:34 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/02/17 18:03:15 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/02/27 20:33:05 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int		newpointer(char *s)
 {
@@ -24,36 +23,11 @@ static int		newpointer(char *s)
 	return (i);
 }
 
-static void		stringclean(char *s, char *newp, char c)
-{
-	int i;
-	int first;
-
-	i = 0;
-	first = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] != c)
-		{
-			*newp = s[i];
-			first = 1;
-			newp++;
-		}
-		else if (s[i] == c && s[i+1] != c && first && s[i+1] != '\0')
-		{
-			*newp = s[i];
-			newp++;
-		}
-		i++;
-	}
-	*newp = '\0';
-}
-
 static int		wordcount(char *s, char c)
 {
 	int i;
 
-	if(*s)
+	if (*s)
 	{
 		i = 1;
 		while (*s)
@@ -62,10 +36,10 @@ static int		wordcount(char *s, char c)
 				i++;
 			s++;
 		}
-		return(i);
+		return (i);
 	}
 	else
-		return(0);
+		return (0);
 }
 
 static int		addpointer(char *s, char **origin, char c, int index)
@@ -96,29 +70,26 @@ char			**ft_split(char const *s, char c)
 	char	*newp;
 	int		i;
 	int		numbersplit;
+	int 	j;
 
+	//j = 0;
 	ptr = (char*)s;
 	newp = (char*)malloc(sizeof(char) * newpointer(ptr));
-	i = 0;
-	stringclean(ptr, newp, c);
+	i = j = 0;
+	newp = ft_strtrim(ptr, &c);
 	numbersplit = wordcount(newp, c);
 	if (numbersplit)
 	{
-		origin = (char**)malloc(sizeof(char*) * numbersplit);
+		origin = (char**)calloc(1, sizeof(char*) * numbersplit);
 		if (!origin)
 			return (0);
-		while (i < numbersplit)
+		while (i < numbersplit )
 		{
-			newp += addpointer(newp, origin, c, i) + 1;
+			j += addpointer(&newp[j], origin, c, i) + 1;
 			i++;
 		}
 	}
+	else
+		return (0);
 	return (origin);
 }
-/*
-int main()
-{
-	char **ptr;
-    ptr = (char**)ft_split("    salem freitas ribeiro   junior", ' ');
-	return(0);
-}*/

@@ -6,7 +6,7 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 17:57:20 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/02/15 18:15:33 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/02/27 10:52:44 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char		*createstring(char *ptr, unsigned int value, char signal, int d)
 {
 	ptr[--d] = '\0';
 	d--;
-	while(d >= signal)
+	while (d >= signal)
 	{
 		ptr[d] = (value % 10) + '0';
 		value /= 10;
@@ -58,7 +58,7 @@ char		*ft_itoa(int n)
 	else
 		value = (unsigned int)n;
 	if (value != 0)
-		digits =  numberdigits(value) + signal + 1 ;
+		digits = numberdigits(value) + signal + 1;
 	else
 		digits = 2;
 	ptr = (char*)malloc(sizeof(char) * digits);
