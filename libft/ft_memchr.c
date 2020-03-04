@@ -6,7 +6,7 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 13:07:55 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/02/15 15:12:05 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/03/04 17:29:23 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ void		*ft_memchr(const void *source, int caracter, size_t n)
 	while (valor[i] != '\0' && i < n)
 	{
 		if (((int)valor[i]) == caracter)
-			return (valor + i);
+			return (&valor[i]);
 		i++;
 	}
+	if (((int)valor[i]) == caracter)
+		return (&valor[i]);
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 15:35:21 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/02/27 16:52:40 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/03/03 20:36:07 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void			*ft_memmove(void *dst, const void *src, unsigned long int len);
 void			*ft_memset(void *source, int caracter, size_t len);
 char			*ft_strchr(const char *source, int caracter);
 char			*ft_strdup(const char *s1);
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
+size_t			ft_strlcat(char *dest, const char *src, size_t size);
 size_t			ft_strlcpy(char *dest, char *src, size_t size);
 size_t			ft_strlen(const char *source);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);

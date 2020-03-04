@@ -6,90 +6,118 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 10:56:34 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/02/27 20:33:05 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/03/03 16:57:46 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		newpointer(char *s)
+/*
+** Função responsável por receber e tratar a string constante, retirando
+** caracteres vazios e excesso de caracteres separadores
+*/
+
+static char		*cleartext(char *source, char c, size_t len)
 {
-	int i;
+	char	*ptr;
+	char	*newptr;
+	char	filter[2];
+	int		i;
+	int		j;
 
-	i = 1;
-	while (s[i] != '\0')
-		i++;
-	i++;
-	return (i);
-}
-
-static int		wordcount(char *s, char c)
-{
-	int i;
-
-	if (*s)
+	filter[0] = c;
+	filter[1] = '\0';
+	ptr = ft_strtrim(source, filter);
+	newptr = (char*)ft_calloc(len + 1, sizeof(*newptr));
+	i = 0;
+	j = 0;
+	while (ptr[i])
 	{
-		i = 1;
-		while (*s)
+		if ((ptr[i] != c) || (ptr[i] == c && ptr[i + 1] != c))
 		{
-			if (*s == c)
-				i++;
-			s++;
+			newptr[j] = ptr[i];
+			j++;
 		}
-		return (i);
+		i++;
 	}
-	else
-		return (0);
+	return (newptr);
 }
 
-static int		addpointer(char *s, char **origin, char c, int index)
+/*
+** Função responsável por alocar a memória do ponteiro de ponteiro.
+** Faz isso contando o número de caracteres separadores e somando mais um
+** o caracter excedente é o indicador de fim do ponteiro
+*/
+
+static char		**createcontroller(char *source, char c)
 {
+	int nseparadores;
 	int i;
-	int j;
+
+	nseparadores = 1;
+	i = 0;
+	while (source[i])
+	{
+		if (source[i] == c)
+			nseparadores++;
+		i++;
+	}
+	return ((char**)ft_calloc(nseparadores + 1, sizeof(char*)));
+}
+
+/*
+** Função responsável por preecher os ponteiros secundários
+*/
+
+static char		*separatepointer(char *s, char c)
+{
+	int		i;
+	int		j;
+	char	*newptr;
 
 	i = 0;
 	j = 0;
-	while (s[i] != '\0' && s[i] != c)
+	while (s[i] && s[i] != c)
 		i++;
-	origin[index] = (char*)malloc((sizeof(char) * i) + 1);
-	if (!origin[index])
-		return (0);
+	newptr = (char*)malloc(sizeof(char) * (i + 1));
 	while (j < i)
 	{
-		origin[index][j] = (char)s[j];
+		newptr[j] = s[j];
 		j++;
 	}
-	origin[index][j] = '\0';
-	return (i);
+	newptr[j] = '\0';
+	return (newptr);
 }
+
+/*
+** Função principal responsável por quebrar uma grande string em várias
+** várias strings menores e retornando um ponteiro de ponteiro apontando
+** cada uma delas.     FUNÇÃO PRINCIPAL
+*/
 
 char			**ft_split(char const *s, char c)
 {
-	char	**origin;
-	char	*ptr;
-	char	*newp;
-	int		i;
-	int		numbersplit;
-	int 	j;
+	char			*source;
+	char			**controler;
+	unsigned int	i;
+	unsigned int	j;
 
-	//j = 0;
-	ptr = (char*)s;
-	newp = (char*)malloc(sizeof(char) * newpointer(ptr));
-	i = j = 0;
-	newp = ft_strtrim(ptr, &c);
-	numbersplit = wordcount(newp, c);
-	if (numbersplit)
+	i = 0;
+	j = 0;
+	source = cleartext((char*)s, c, ft_strlen(s));
+	controler = (char**)createcontroller(source, c);
+	if (*source == '\0')
+		return (controler);
+	controler[j] = separatepointer(&source[i], c);
+	j++;
+	while (source[i] != '\0')
 	{
-		origin = (char**)calloc(1, sizeof(char*) * numbersplit);
-		if (!origin)
-			return (0);
-		while (i < numbersplit )
+		if (source[i] == c)
 		{
-			j += addpointer(&newp[j], origin, c, i) + 1;
-			i++;
+			controler[j] = separatepointer(&source[i + 1], c);
+			j++;
 		}
+		i++;
 	}
-	else
-		return (0);
-	return (origin);
+	return (controler);
 }

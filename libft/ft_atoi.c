@@ -6,7 +6,7 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 10:56:34 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/02/17 18:03:15 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/03/03 20:56:50 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int		ft_atoi(const char *str)
 	int body[3];
 	int result;
 
+	if (!str[0])
+		return (0);
 	searchlength(str, body);
 	result = 0;
 	if (body[0] != -2 && body[1] != -2 && body[2] != -2)
