@@ -6,7 +6,7 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 10:56:34 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/03/03 16:57:46 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/03/09 18:46:11 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,27 +67,52 @@ static char		**createcontroller(char *source, char c)
 
 /*
 ** Função responsável por preecher os ponteiros secundários
+**
+** static char		*separatepointer(char *s, char c)
+** {
+** int		i;
+** int		j;
+** char	*newptr;
+**
+** i = 0;
+** j = 0;
+** while (s[i] && s[i] != c)
+** i++;
+** newptr = (char*)malloc(sizeof(char) * (i + 1));
+** while (j < i)
+** {
+** newptr[j] = s[j];
+** j++;
+** }
+** newptr[j] = '\0';
+** return (newptr);
+** }
 */
 
-static char		*separatepointer(char *s, char c)
+/*
+ ** Função responsável por verificar a quantidade de espaços separadores
+*/
+	static char		*protetor(char *s, char c)
 {
-	int		i;
-	int		j;
-	char	*newptr;
+	int i;
+	char newptr;
 
 	i = 0;
-	j = 0;
-	while (s[i] && s[i] != c)
+	while (s[i])
 		i++;
-	newptr = (char*)malloc(sizeof(char) * (i + 1));
-	while (j < i)
+	if (i > 1)
 	{
-		newptr[j] = s[j];
-		j++;
+		if (s[0] == c && s[1] == c)
+		{
+			newptr = (char*)malloc(sizeof(char));
+			newptr[0] = '\0';
+		}
+		else
+			return(s);
 	}
-	newptr[j] = '\0';
-	return (newptr);
+	return(s);
 }
+
 
 /*
 ** Função principal responsável por quebrar uma grande string em várias
@@ -97,14 +122,17 @@ static char		*separatepointer(char *s, char c)
 
 char			**ft_split(char const *s, char c)
 {
-	char			*source;
+	//char			*source;
 	char			**controler;
 	unsigned int	i;
 	unsigned int	j;
 
 	i = 0;
 	j = 0;
-	source = cleartext((char*)s, c, ft_strlen(s));
+	if (!s)
+		return (0);
+	//source = cleartext((char*)s, c, ft_strlen(s));
+	source = protetor(s, c);
 	controler = (char**)createcontroller(source, c);
 	if (*source == '\0')
 		return (controler);
