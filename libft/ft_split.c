@@ -12,84 +12,75 @@
 
 #include "libft.h"
 
-static int		newpointer(char *s)
+static int	cwords(char const *s, char c)
 {
-	int i;
-
-	i = 1;
-	while (s[i] != '\0')
-		i++;
-	i++;
-	return (i);
-}
-
-static int		wordcount(char *s, char c)
-{
-	int i;
-
-	if (*s)
-	{
-		i = 1;
-		while (*s)
-		{
-			if (*s == c)
-				i++;
-			s++;
-		}
-		return (i);
-	}
-	else
-		return (0);
-}
-
-static int		addpointer(char *s, char **origin, char c, int index)
-{
-	int i;
-	int j;
+	int		i;
+	int		word;
+	int		count;
 
 	i = 0;
-	j = 0;
-	while (s[i] != '\0' && s[i] != c)
-		i++;
-	origin[index] = (char*)malloc((sizeof(char) * i) + 1);
-	if (!origin[index])
-		return (0);
-	while (j < i)
+	word = 0;
+	count = 0;
+	while (s[i])
 	{
-		origin[index][j] = (char)s[j];
-		j++;
+		if (s[i] == c)
+			word = 0;
+		else if (s[i] != c && word == 0)
+		{
+			word = 1;
+			count++;
+		}
+		i++;
 	}
-	origin[index][j] = '\0';
-	return (i);
+	return (count);
 }
 
-char			**ft_split(char const *s, char c)
+static char	*makeword(char const *s, char c)
 {
-	char	**origin;
-	char	*ptr;
-	char	*newp;
 	int		i;
-	int		numbersplit;
-	int 	j;
+	char	*word;
 
-	//j = 0;
-	ptr = (char*)s;
-	newp = (char*)malloc(sizeof(char) * newpointer(ptr));
-	i = j = 0;
-	newp = ft_strtrim(ptr, &c);
-	numbersplit = wordcount(newp, c);
-	if (numbersplit)
+	i = 0;
+	while (s[i] && s[i] != c)
+		i++;
+	word = (char *)malloc(i + 1);
+	if (!word)
+		return (NULL);
+	word[i] = 0;
+	i--;
+	while (i >= 0)
 	{
-		origin = (char**)calloc(1, sizeof(char*) * numbersplit);
-		if (!origin)
-			return (0);
-		while (i < numbersplit )
-		{
-			j += addpointer(&newp[j], origin, c, i) + 1;
-			i++;
-		}
+		word[i] = s[i];
+		i--;
 	}
-	else
-		return (0);
-	return (origin);
+	return (word);
+}
+
+char		**ft_split(char const *s, char c)
+{
+	char	**split;
+	int		word;
+	int		count;
+	int		i;
+
+	if (!s || !(split = (char **)malloc((cwords(s, c) + 1) * sizeof(char *))))
+		return (NULL);
+	word = 0;
+	count = 0;
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+			word = 0;
+		else if (s[i] != c && word == 0)
+		{
+			word = 1;
+			if (!(split[count] = makeword(&s[i], c)))
+				return (NULL);
+			count++;
+		}
+		i++;
+	}
+	split[count] = 0;
+	return (split);
 }
