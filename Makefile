@@ -3,9 +3,9 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rcamilo- <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By:sfreitas- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/01/23 19:27:53 by rcamilo-          #+#    #+#              #
+#    Created: 2020/01/23 19:27:53 by sfreitas          #+#    #+#              #
 #    Updated: 2020/02/18 10:25:40 by sfreitas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
@@ -15,7 +15,7 @@ SRCS = *.c
 OBJS = *.o
 CPARAMS = -c
 CFLAGS = -Wall -Werror -Wextra
-CC = gcc
+CC = clang
 AR = ar
 ARPARAMS = -rc
 
