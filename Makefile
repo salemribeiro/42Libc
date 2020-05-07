@@ -6,7 +6,7 @@
 #    By:sfreitas- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/23 19:27:53 by sfreitas          #+#    #+#              #
-#    Updated: 2020/02/18 10:25:40 by sfreitas         ###   ########.fr        #
+#    Updated: 2020/05/07 19:37:58 by sfreitas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRCS = *.c
 OBJS = *.o
 CPARAMS = -c
 CFLAGS = -Wall -Werror -Wextra
-CC = clang
+CC = gcc
 AR = ar
 ARPARAMS = -rc
 
