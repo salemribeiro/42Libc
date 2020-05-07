@@ -5,31 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/14 20:32:06 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/02/15 18:50:01 by sfreitas         ###   ########.fr       */
+/*   Created: 2020/05/07 20:46:14 by sfreitas          #+#    #+#             */
+/*   Updated: 2020/05/07 20:46:17 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strdup(const char *src)
 {
-	char	*ptr;
+	char	*ans;
 	int		i;
-	int		j;
 
 	i = 0;
-	j = 0;
-	while (s1[i] != '\0')
+	while (src[i] != '\0')
 		i++;
-	ptr = (char*)malloc(sizeof(char) * i);
-	if (i > 0)
+	if (!(ans = malloc(sizeof(char) * i + 1)))
+		return (0);
+	i = 0;
+	while (src[i] != '\0')
 	{
-		while (j <= i)
-		{
-			ptr[j] = s1[j];
-			j++;
-		}
+		ans[i] = src[i];
+		i++;
 	}
-	return (ptr);
+	ans[i] = '\0';
+	return (ans);
 }
