@@ -1,0 +1,323 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+c1r5p2.42sp.org.br
+Darwin 18.6.0 x86_64
+$> date
+Thu May  7 19:55:32 -03 2020
+$> gcc --version
+Apple LLVM version 10.0.1 (clang-1001.0.46.4)
+Target: x86_64-apple-darwin18.6.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple LLVM version 10.0.1 (clang-1001.0.46.4)
+Target: x86_64-apple-darwin18.6.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= libft.h=======================================================================
+$> norminette libft.h | grep -E '(Error|Warning)'
+Error: global scope bad aligned
+Error (line 74): line has 82 characters
+Error (line 78): multiple empty lines
+Norme check failed
+
+= Compiling libft ==============================================================
+$> make re
+rm -f *.o
+rm -f libft.a
+gcc -c -Wall -Werror -Wextra *.c
+ft_lstnew.c:19:12: error: use of undeclared identifier 'List'; did you mean 'int'?
+        node                    = (List*)malloc(sizeof(List));
+                                   ^~~~
+                                   int
+ft_lstnew.c:19:12: error: expected expression
+2 errors generated.
+make: *** [libft.a] Error 1
+
+$> ls -la libft.a
+
+= Part1_functions ==============================================================
+
+= ft_memset.c ==================================================================
+$> norminette ft_memset.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_memset.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_bzero.c ===================================================================
+$> norminette ft_bzero.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_bzero.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_calloc.c ==================================================================
+$> norminette ft_calloc.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_calloc.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_memcpy.c ==================================================================
+$> norminette ft_memcpy.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_memcpy.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_memccpy.c =================================================================
+$> norminette ft_memccpy.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_memccpy.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_memmove.c =================================================================
+$> norminette ft_memmove.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_memmove.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_memchr.c ==================================================================
+$> norminette ft_memchr.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_memchr.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_memcmp.c ==================================================================
+$> norminette ft_memcmp.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_memcmp.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_strlen.c ==================================================================
+$> norminette ft_strlen.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strlen.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_strdup.c ==================================================================
+$> norminette ft_strdup.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strdup.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_strlcat.c =================================================================
+$> norminette ft_strlcat.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strlcat.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_strlcpy.c =================================================================
+$> norminette ft_strlcpy.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strlcpy.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_strchr.c ==================================================================
+$> norminette ft_strchr.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strchr.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_strrchr.c =================================================================
+$> norminette ft_strrchr.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strrchr.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_strnstr.c =================================================================
+$> norminette ft_strnstr.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strnstr.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_strncmp.c =================================================================
+$> norminette ft_strncmp.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strncmp.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_atoi.c ====================================================================
+$> norminette ft_atoi.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_atoi.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_isalpha.c =================================================================
+$> norminette ft_isalpha.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_isalpha.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_isdigit.c =================================================================
+$> norminette ft_isdigit.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_isdigit.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_isalnum.c =================================================================
+$> norminette ft_isalnum.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_isalnum.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_isascii.c =================================================================
+$> norminette ft_isascii.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_isascii.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_isprint.c =================================================================
+$> norminette ft_isprint.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_isprint.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_toupper.c =================================================================
+$> norminette ft_toupper.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_toupper.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_tolower.c =================================================================
+$> norminette ft_tolower.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_tolower.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= Part2_functions ==============================================================
+
+= ft_strmapi.c =================================================================
+$> norminette ft_strmapi.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strmapi.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_substr.c ==================================================================
+$> norminette ft_substr.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_substr.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_strjoin.c =================================================================
+$> norminette ft_strjoin.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strjoin.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_strtrim.c =================================================================
+$> norminette ft_strtrim.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strtrim.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_split.c ===================================================================
+$> norminette ft_split.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_split.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_itoa.c ====================================================================
+$> norminette ft_itoa.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_itoa.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_putchar_fd.c ==============================================================
+$> norminette ft_putchar_fd.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_putchar_fd.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_putstr_fd.c ===============================================================
+$> norminette ft_putstr_fd.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_putstr_fd.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_putendl_fd.c ==============================================================
+$> norminette ft_putendl_fd.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_putendl_fd.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_putnbr_fd.c ===============================================================
+$> norminette ft_putnbr_fd.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_putnbr_fd.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= Bonus_functions ==============================================================
+
+= ft_lstnew.c ==================================================================
+$> norminette ft_lstnew.c | grep -E '(Error|Warning)'
+Error: 42 header not at top of the file
+Error (line 19, col 8): missing space around =
+Error (line 24, col 2): missing space after return
+Error (line 27, col 2): missing space after return
+Norme check failed
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstnew.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_lstdelone.c ===============================================================
+$> norminette ft_lstdelone.c | grep -E '(Error|Warning)'
+Error: 42 header not at top of the file
+Norme check failed
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstdelone.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_lstclear.c ================================================================
+$> norminette ft_lstclear.c | grep -E '(Error|Warning)'
+Error: 42 header not at top of the file
+Norme check failed
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstclear.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_lstadd_front.c ============================================================
+$> norminette ft_lstadd_front.c | grep -E '(Error|Warning)'
+Error: 42 header not at top of the file
+Norme check failed
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstadd_front.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_lstadd_back.c =============================================================
+$> norminette ft_lstadd_back.c | grep -E '(Error|Warning)'
+Error: 42 header not at top of the file
+Norme check failed
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstadd_back.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_lstsize.c =================================================================
+$> norminette ft_lstsize.c | grep -E '(Error|Warning)'
+Error: 42 header not at top of the file
+Norme check failed
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstsize.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_lstiter.c =================================================================
+$> norminette ft_lstiter.c | grep -E '(Error|Warning)'
+Error: 42 header not at top of the file
+Norme check failed
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstiter.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_lstmap.c ==================================================================
+$> norminette ft_lstmap.c | grep -E '(Error|Warning)'
+Error: 42 header not at top of the file
+Norme check failed
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstmap.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
+
+= ft_lstlast.c =================================================================
+$> norminette ft_lstlast.c | grep -E '(Error|Warning)'
+Error: 42 header not at top of the file
+Norme check failed
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstlast.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a'
