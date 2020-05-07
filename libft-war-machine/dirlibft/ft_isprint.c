@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/07 20:06:09 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/05/07 20:06:10 by sfreitas         ###   ########.fr       */
+/*   Created: 2020/01/27 19:17:42 by sfreitas          #+#    #+#             */
+/*   Updated: 2020/02/15 19:25:35 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+int		ft_isprint(int caracter)
 {
-	t_list *node;
-
-	node			= (t_list*)malloc(sizeof(t_list));
-	if (node)
-	{
-		node->content = content;
-		node->next = NULL;
-		return(node);
-	}
-	else
-		return(0);
+	if (caracter >= 32 && caracter < 127)
+		return (1);
+	return (0);
 }
