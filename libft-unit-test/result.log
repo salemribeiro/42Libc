@@ -1,0 +1,129 @@
+ft_memset:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_bzero:      [OK] [OK] [OK] [OK] 
+ft_memcpy:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_memccpy:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_memmove:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_memchr:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_memcmp:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strlen:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_isalpha:    [OK] 
+ft_isdigit:    [OK] 
+ft_isalnum:    [OK] 
+ft_isascii:    [OK] 
+ft_isprint:    [OK] 
+ft_toupper:    [OK] 
+ft_tolower:    [OK] 
+ft_strchr:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strrchr:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strncmp:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strlcpy:    [OK] [OK] [OK] [OK] [OK] [OK] {protected}
+ft_strlcat:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strnstr:    [OK] [OK] [FAILED] [OK] [OK] [OK] [OK] [OK] [OK] [CRASH] [CRASH] [CRASH] [OK] [OK] 
+[fail]: your strnstr does not work with basic input
+Test code:
+	char *s1 = "MZIRIBMZIRIBMZE123";
+	char *s2 = "MZIRIBMZE";
+	size_t max = strlen(s2);
+	char *i1 = strnstr(s1, s2, max);
+	char *i2 = ft_strnstr(s1, s2, max);
+
+	if (i1 == i2)
+		exit(TEST_SUCCESS);
+	exit(TEST_FAILED);
+
+Diffs:
+     strnstr: |(null)|
+  ft_strnstr: |MZIRIBMZIRIBMZE123|
+
+[crash]: your strnstr does not work with empty strings and 0 length
+Test code:
+	char *s1 = "AAAAAAAAAAAAA";
+	size_t max = strlen(s1);
+	char *i1 = strnstr(s1, s1, max);
+	char *i2 = ft_strnstr(s1, s1, max);
+
+	if (i1 == i2)
+		exit(TEST_SUCCESS);
+	exit(TEST_FAILED);
+
+
+[crash]: your strnstr does not work with empty strings and 0 length
+Test code:
+	char *s1 = "A";
+	char *i1 = strnstr(s1, s1, 2);
+	char *i2 = ft_strnstr(s1, s1, 2);
+
+	if (i1 == i2)
+		exit(TEST_SUCCESS);
+	exit(TEST_FAILED);
+
+
+[crash]: your strnstr crash because it read too many bytes !
+Test code:
+	const size_t size = 20;
+	char *s1 = electric_alloc(size);
+	char *s2 = electric_alloc(size);
+
+	__builtin___strcpy_chk (s1, "is there a nyacat ?", __builtin_object_size (s1, 2 > 1 ? 1 : 0));
+	__builtin___strcpy_chk (s2, "is there a nyacat ?", __builtin_object_size (s2, 2 > 1 ? 1 : 0));
+	ft_strnstr(s1, s2, size);
+	exit(TEST_SUCCESS);
+
+
+ft_atoi:       [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_calloc:     [OK] [OK] [OK] [OK] [OK] 
+ft_strdup:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_substr:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] {protected}
+ft_strjoin:    [OK] [OK] [OK] [OK] [OK] {not protected}
+ft_strtrim:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] {protected}
+ft_split:      [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] {protected}
+ft_itoa:       [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strmapi:    [OK] [OK] [OK] [OK] [OK] {protected}
+ft_putchar_fd: [OK] [OK] [KO] 
+[KO]: your putchar_fd does not work with unicode
+Test code:
+	char buff[10];
+	char buff2[10];
+	int c = L'ø';
+	int len = 0;
+
+	putwchart(c, &len, buff2);
+	buff2[len] = 0;
+	fd_to_buffer(2);
+	ft_putchar_fd(c, 2);
+	write(2, "", 1);
+	get_fd_buffer(2, buff, 10);
+	if (!strcmp(buff, buff2))
+		exit(TEST_SUCCESS);
+	exit(TEST_KO);
+
+Diffs:
+  putchar_fd: |�|
+ft_putchar_fd: |ø|
+
+ft_putstr_fd:  [OK] [OK] {protected}
+ft_putendl_fd: [OK] [OK] {protected}
+ft_putnbr_fd:  [OK] [OK] [OK] [OK] [CRASH] 
+[crash]: your putnbr_fd allocate memory, wtf ???
+Test code:
+	int i = (-2147483647 -1);
+	char buff[0xF0];
+
+	fd_to_buffer(2);
+	ft_putnbr_fd(i, 2);
+	write(2, "", 1);
+	get_fd_buffer(2, buff, 0xF0);
+	if (atoi(buff) == i)
+		exit(TEST_SUCCESS);
+	exit(TEST_FAILED);
+
+
+ft_lstnew:     [MISSING]
+ft_lstadd_front: [MISSING]
+ft_lstsize:    [MISSING]
+ft_lstlast:    [MISSING]
+ft_lstadd_back:[MISSING]
+ft_lstdelone:  [MISSING]
+ft_lstclear:   [MISSING]
+ft_lstiter:    [MISSING]
+ft_lstmap:     [MISSING]

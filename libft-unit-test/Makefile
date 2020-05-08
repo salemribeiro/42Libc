@@ -6,7 +6,7 @@
 #    By: alelievr <alelievr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created  2015/04/04 19:22:36 by alelievr          #+#    #+#              #
-#    Updated: 2019/11/03 22:05:40 by tjans         ########   odam.nl          #
+#    Updated: 2020/05/07 23:31:03 by sfreitas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 #################
 
 #	Libft Makefile path
-LIBFTDIR	=	../libft
+LIBFTDIR	=	../
 
 #	Sources
 SRCDIR		=	./

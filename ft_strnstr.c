@@ -6,7 +6,7 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 19:17:11 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/05/07 23:21:01 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/05/07 23:54:30 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ char	*ft_strnstr(const char *text, const char *word, int value)
 	j = 0;
 	valid = 0;
 	ptn = (char*)text;
-	if (!word)
+	if (!*word)
 		return (ptn);
 	while (ptn[i] && i < value)
 	{
-		while (ptn[i + j] == word[j] && word[j] != '\0')
+		while (ptn[i + j] == word[j])
 		{
 			j++;
-			if ((i + j) < value)
+			if ((i + j) < value && !word[j +1])
 				valid = 1;
 		}
 		if (valid == 1)
