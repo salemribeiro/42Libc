@@ -6,12 +6,13 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 11:15:20 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/05/08 00:15:26 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/05/08 00:27:38 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void    ft_putnbr_fd(int n, int fd)
+
+void	ft_putnbr_fd(int n, int fd)
 {
 	unsigned nbr;
 

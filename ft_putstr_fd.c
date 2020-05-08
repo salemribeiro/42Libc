@@ -6,7 +6,7 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 10:54:14 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/05/07 23:00:28 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/05/08 00:28:18 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_putstr_fd(char *s, int fd)
 {
 	int size;
+	
 	if (!s)
 		return ;
 	size = ft_strlen(s);
