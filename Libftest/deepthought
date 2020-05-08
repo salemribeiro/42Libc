@@ -3,7 +3,7 @@ $> hostname; uname -msr
 shadown
 Linux 5.3.0-51-generic x86_64
 $> date
-sex mai  8 14:56:55 -03 2020
+sex mai  8 16:32:38 -03 2020
 $> gcc --version
 gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
 Copyright (C) 2017 Free Software Foundation, Inc.
@@ -21,14 +21,46 @@ $> norminette libft.h | grep -E '(Error|Warning)'
 
 = Compiling libft ==============================================================
 $> make re
-rm -f *.o
-rm -f libft.a
-gcc -c -Wall -Werror -Wextra *.c
-ar -rc libft.a *.o
-make: Nothing to be done for 'bonus'.
+cc    -c -o ft_atoi.o ft_atoi.c
+cc    -c -o ft_bzero.o ft_bzero.c
+cc    -c -o ft_calloc.o ft_calloc.c
+cc    -c -o ft_isalnum.o ft_isalnum.c
+cc    -c -o ft_isalpha.o ft_isalpha.c
+cc    -c -o ft_isascii.o ft_isascii.c
+cc    -c -o ft_isdigit.o ft_isdigit.c
+cc    -c -o ft_isprint.o ft_isprint.c
+cc    -c -o ft_memccpy.o ft_memccpy.c
+cc    -c -o ft_memcpy.o ft_memcpy.c
+cc    -c -o ft_memchr.o ft_memchr.c
+cc    -c -o ft_memcmp.o ft_memcmp.c
+cc    -c -o ft_memmove.o ft_memmove.c
+cc    -c -o ft_memset.o ft_memset.c
+cc    -c -o ft_strchr.o ft_strchr.c
+cc    -c -o ft_strncmp.o ft_strncmp.c
+cc    -c -o ft_strdup.o ft_strdup.c
+cc    -c -o ft_strlcat.o ft_strlcat.c
+cc    -c -o ft_strlcpy.o ft_strlcpy.c
+cc    -c -o ft_strlen.o ft_strlen.c
+cc    -c -o ft_strnstr.o ft_strnstr.c
+cc    -c -o ft_strrchr.o ft_strrchr.c
+cc    -c -o ft_tolower.o ft_tolower.c
+cc    -c -o ft_toupper.o ft_toupper.c
+cc    -c -o ft_substr.o ft_substr.c
+cc    -c -o ft_strjoin.o ft_strjoin.c
+cc    -c -o ft_strtrim.o ft_strtrim.c
+cc    -c -o ft_split.o ft_split.c
+cc    -c -o ft_itoa.o ft_itoa.c
+cc    -c -o ft_strmapi.o ft_strmapi.c
+cc    -c -o ft_putnbr_fd.o ft_putnbr_fd.c
+cc    -c -o ft_putendl_fd.o ft_putendl_fd.c
+cc    -c -o ft_putstr_fd.o ft_putstr_fd.c
+cc    -c -o ft_putchar_fd.o ft_putchar_fd.c
+ar -r libft.a  ft_atoi.o  ft_bzero.o  ft_calloc.o  ft_isalnum.o  ft_isalpha.o  ft_isascii.o  ft_isdigit.o  ft_isprint.o  ft_memccpy.o  ft_memcpy.o  ft_memchr.o  ft_memcmp.o  ft_memmove.o  ft_memset.o  ft_strchr.o  ft_strncmp.o  ft_strdup.o  ft_strlcat.o  ft_strlcpy.o  ft_strlen.o  ft_strnstr.o  ft_strrchr.o  ft_tolower.o  ft_toupper.o  ft_substr.o  ft_strjoin.o  ft_strtrim.o  ft_split.o  ft_itoa.o  ft_strmapi.o  ft_putnbr_fd.o  ft_putendl_fd.o  ft_putstr_fd.o  ft_putchar_fd.o
+ar: criando libft.a
+make: *** No rule to make target 'ft_lstnew.c', needed by 'ft_lstnew.o'.  Pare.
 
 $> ls -la libft.a
--rw-r--r-- 1 salem salem 56156 mai  8 14:56 /home/salem/Documentos/Code/Libft/Libftest/tmp_tests_dir/libft.a
+-rw-r--r-- 1 salem salem 53576 mai  8 16:32 /home/salem/Documentos/Code/Libft/Libftest/tmp_tests_dir/libft.a
 
 = Part1_functions ==============================================================
 
