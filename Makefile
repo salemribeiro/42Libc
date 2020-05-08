@@ -6,7 +6,7 @@
 #    By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/08 16:37:24 by sfreitas          #+#    #+#              #
-#    Updated: 2020/05/08 18:20:24 by sfreitas         ###   ########.fr        #
+#    Updated: 2020/05/08 19:17:44 by sfreitas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,7 @@ bonus : $(BONUSOBJ)
 BONUSOBJ : $(BONUSSRC)
 	gcc -c -Wall -Wextra -Werror $(BONUSSRC) -o $(BONUSOBJ)
 
-clean: 
+clean:
 	@rm -f $(OBJS) $(BONUSOBJ)
 
 fclean : clean
