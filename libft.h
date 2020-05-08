@@ -6,7 +6,7 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 15:35:21 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/05/08 00:24:59 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/05/08 11:45:33 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ size_t			ft_strlcat(char *dest, const char *src, size_t size);
 size_t			ft_strlcpy(char *dest, char *src, size_t size);
 size_t			ft_strlen(const char *source);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
-char    		*ft_strnstr(const char *str, const char *little, size_t len);
+char			*ft_strnstr(const char *str, const char *little, size_t len);
 char			*ft_strrchr(const char *source, int caracter);
 int				ft_tolower(int caracter);
 int				ft_toupper(int caracter);
