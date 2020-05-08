@@ -6,7 +6,7 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 16:00:03 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/05/08 11:30:44 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/05/08 11:56:02 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	valuesb[j] = '\0';
 	return (valuesb);
 }
+strsub = ft_substr(str, 400, 20)

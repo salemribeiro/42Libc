@@ -3,7 +3,7 @@ $> hostname; uname -msr
 c1r1p4.42sp.org.br
 Darwin 18.6.0 x86_64
 $> date
-Fri May  8 11:48:07 -03 2020
+Fri May  8 11:52:17 -03 2020
 $> gcc --version
 Apple LLVM version 10.0.1 (clang-1001.0.46.4)
 Target: x86_64-apple-darwin18.6.0
@@ -26,7 +26,7 @@ gcc -c -Wall -Werror -Wextra *.c
 ar -rc libft.a *.o
 
 $> ls -la libft.a
--rw-r--r--  1 sfreitas  candidate  32616 May  8 11:48 /Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a
+-rw-r--r--  1 sfreitas  candidate  32616 May  8 11:52 /Users/sfreitas/Libft/libft-war-machine/dirlibft/libft.a
 
 = Part1_functions ==============================================================
 
