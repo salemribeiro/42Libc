@@ -3,7 +3,7 @@ $> hostname; uname -msr
 shadown
 Linux 5.3.0-51-generic x86_64
 $> date
-sex mai  8 16:32:38 -03 2020
+sex mai  8 17:57:28 -03 2020
 $> gcc --version
 gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
 Copyright (C) 2017 Free Software Foundation, Inc.
@@ -57,10 +57,19 @@ cc    -c -o ft_putstr_fd.o ft_putstr_fd.c
 cc    -c -o ft_putchar_fd.o ft_putchar_fd.c
 ar -r libft.a  ft_atoi.o  ft_bzero.o  ft_calloc.o  ft_isalnum.o  ft_isalpha.o  ft_isascii.o  ft_isdigit.o  ft_isprint.o  ft_memccpy.o  ft_memcpy.o  ft_memchr.o  ft_memcmp.o  ft_memmove.o  ft_memset.o  ft_strchr.o  ft_strncmp.o  ft_strdup.o  ft_strlcat.o  ft_strlcpy.o  ft_strlen.o  ft_strnstr.o  ft_strrchr.o  ft_tolower.o  ft_toupper.o  ft_substr.o  ft_strjoin.o  ft_strtrim.o  ft_split.o  ft_itoa.o  ft_strmapi.o  ft_putnbr_fd.o  ft_putendl_fd.o  ft_putstr_fd.o  ft_putchar_fd.o
 ar: criando libft.a
-make: *** No rule to make target 'ft_lstnew.c', needed by 'ft_lstnew.o'.  Pare.
+cc    -c -o ft_lstnew.o ft_lstnew.c
+cc    -c -o ft_lstadd_front.o ft_lstadd_front.c
+cc    -c -o ft_lstsize.o ft_lstsize.c
+cc    -c -o ft_lstlast.o ft_lstlast.c
+cc    -c -o ft_lstadd_back.o ft_lstadd_back.c
+cc    -c -o ft_lstdelone.o ft_lstdelone.c
+cc    -c -o ft_lstclear.o ft_lstclear.c
+cc    -c -o ft_lstiter.o ft_lstiter.c
+cc    -c -o ft_lstmap.o ft_lstmap.c
+make: *** No rule to make target 'ft_islower_bonus.c', needed by 'ft_islower_bonus.o'.  Pare.
 
 $> ls -la libft.a
--rw-r--r-- 1 salem salem 53576 mai  8 16:32 /home/salem/Documentos/Code/Libft/Libftest/tmp_tests_dir/libft.a
+-rw-r--r-- 1 salem salem 53394 mai  8 17:57 /home/salem/Documentos/Code/Libft/Libftest/tmp_tests_dir/libft.a
 
 = Part1_functions ==============================================================
 
