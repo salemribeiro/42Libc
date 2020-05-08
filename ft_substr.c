@@ -6,7 +6,7 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 16:00:03 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/05/08 14:03:13 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/05/08 14:13:59 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!valuesb)
 		return (NULL);
 	i = start;
-	while (s[i])
+	while (j < len)
 		valuesb[j++] = s[i++];
 	valuesb[j] = '\0';
 	return (valuesb);
