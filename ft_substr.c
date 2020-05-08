@@ -6,7 +6,7 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 16:00:03 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/05/08 13:56:09 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/05/08 14:03:13 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	size_t	j;
 	char	*valuesb;
-	int		tlen;
+	size_t	tlen;
+
 	i = 0;
 	j = 0;
-
 	if (!s)
 		return (NULL);
 	tlen = ft_strlen(s);
