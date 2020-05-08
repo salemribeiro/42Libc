@@ -6,7 +6,7 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 22:52:48 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/05/07 22:20:38 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/05/07 23:20:14 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t		ft_strlcpy(char *dest, char *src, size_t size)
 
 	i = 0;
 	j = 0;
-	if (!*dest || !*src)
+	if (!dest || !src)
 		return(0);
 	while (src[j] != '\0')
 		j++;

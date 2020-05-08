@@ -6,7 +6,7 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 19:17:11 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/05/07 22:29:51 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/05/07 23:21:01 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strnstr(const char *text, const char *word, int value)
 	j = 0;
 	valid = 0;
 	ptn = (char*)text;
-	if (!*word)
+	if (!word)
 		return (ptn);
 	while (ptn[i] && i < value)
 	{
