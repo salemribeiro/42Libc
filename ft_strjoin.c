@@ -6,7 +6,7 @@
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 17:12:08 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/05/07 23:58:41 by sfreitas         ###   ########.fr       */
+/*   Updated: 2020/05/08 00:01:50 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ char				*ft_strjoin(char const *s1, char const *s2)
 	int		j;
 	char	*ptr;
 
-	i = contador(s1);
-	j = contador(s2);
 	if (!s1 || !s2)
 		return (NULL);
+	i = contador(s1);
+	j = contador(s2);
 	ptr = (char*)malloc(sizeof(char) * (i + j + 1));
 	if (!ptr)
 		return (0);
