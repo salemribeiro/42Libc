@@ -5,38 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/13 19:17:11 by sfreitas          #+#    #+#             */
-/*   Updated: 2020/05/07 23:54:30 by sfreitas         ###   ########.fr       */
+/*   Created: 2020/05/08 00:21:18 by sfreitas          #+#    #+#             */
+/*   Updated: 2020/05/08 00:21:35 by sfreitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *text, const char *word, int value)
+char	*ft_strnstr(const char *str, const char *little, size_t len)
 {
-	int		i;
-	int		j;
-	int		valid;
-	char	*ptn;
+	size_t		i;
+	size_t		c;
 
+	if (!(*little))
+		return ((char*)str);
 	i = 0;
-	j = 0;
-	valid = 0;
-	ptn = (char*)text;
-	if (!*word)
-		return (ptn);
-	while (ptn[i] && i < value)
+	while (str[i] != '\0' && len > i)
 	{
-		while (ptn[i + j] == word[j])
+		if (str[i] == little[0])
 		{
-			j++;
-			if ((i + j) < value && !word[j +1])
-				valid = 1;
+			c = 1;
+			while (str[i + c] == little[c] && little[c] != '\0' &&
+					(i + c) < len)
+				c++;
+			if (little[c] == '\0')
+			{
+				str = &str[i];
+				return ((char*)str);
+			}
 		}
-		if (valid == 1)
-			return (&ptn[i]);
-		j = 0;
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
