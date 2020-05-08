@@ -6,7 +6,7 @@
 #    By: sfreitas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/08 16:37:24 by sfreitas          #+#    #+#              #
-#    Updated: 2020/05/08 16:37:25 by sfreitas         ###   ########.fr        #
+#    Updated: 2020/05/08 18:20:24 by sfreitas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,14 +58,6 @@ BONUSSRC = ft_lstnew.c \
 		   ft_lstclear.c \
 		   ft_lstiter.c \
 		   ft_lstmap.c \
-		   ft_islower_bonus.c \
-		   ft_isspace_bonus.c \
-		   ft_isupper_bonus.c \
-		   ft_putchar_bonus.c \
-		   ft_putnbr_bonus.c \
-		   ft_putstr_bonus.c \
-		   ft_isblank_bonus.c \
-		   ft_putendl_bonus.c
 
 BONUSOBJ = $(patsubst %.c, %.o, $(BONUSSRC))
 
