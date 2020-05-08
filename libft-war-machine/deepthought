@@ -3,7 +3,7 @@ $> hostname; uname -msr
 shadown
 Linux 5.3.0-51-generic x86_64
 $> date
-sex mai  8 16:31:48 -03 2020
+sex mai  8 17:43:16 -03 2020
 $> gcc --version
 gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
 Copyright (C) 2017 Free Software Foundation, Inc.
@@ -59,7 +59,7 @@ ar -r libft.a  ft_atoi.o  ft_bzero.o  ft_calloc.o  ft_isalnum.o  ft_isalpha.o  f
 ar: criando libft.a
 
 $> ls -la libft.a
--rw-r--r-- 1 salem salem 53576 mai  8 16:31 /home/salem/Documentos/Code/Libft/libft-war-machine/dirlibft/libft.a
+-rw-r--r-- 1 salem salem 53576 mai  8 17:43 /home/salem/Documentos/Code/Libft/libft-war-machine/dirlibft/libft.a
 
 = Part1_functions ==============================================================
 
